@@ -46,3 +46,9 @@ Thumbs.db
 
 # Optional coverage directory
 coverage
+
+# Feedback and Temporary Files
+*.docx
+*.txt
+feedback_images/
+inspector.html

@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import { Check, Star, MapPin } from 'lucide-react';
-import { pricingPackages, locations } from '../../data/pricing';
+import { pricingPackages } from '../../data/benefits';
+import { locations } from '../../data/pricing';
 
 export function PricingPackages() {
-  const [selectedLocation, setSelectedLocation] = useState('Bengaluru');
+  const [selectedLocation, setSelectedLocation] = useState('Gurgaon');
 
   return (
     <section id="plans" className="py-20 bg-white">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="section-heading">Construction Packages</h2>
-          <p className="section-subheading">
-            Choose the perfect package for your dream home. All packages include quality materials and expert craftsmanship.
+          <h2 className="section-heading text-3xl md:text-4xl">
+            Choose your path...
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            Focusing exclusively on high-quality home construction with our four specialized packages.
           </p>
         </div>
 
@@ -32,11 +35,10 @@ export function PricingPackages() {
           {pricingPackages.map((pkg) => (
             <div
               key={pkg.id}
-              className={`relative rounded-2xl p-6 transition-all duration-300 ${
-                pkg.isPopular
-                  ? 'bg-primary-600 text-white shadow-xl scale-105 lg:scale-110 z-10'
-                  : 'bg-white border border-gray-200 hover:border-primary-300 hover:shadow-lg'
-              }`}
+              className={`relative rounded-2xl p-6 transition-all duration-300 ${pkg.isPopular
+                ? 'bg-primary-600 text-white shadow-xl scale-105 lg:scale-110 z-10'
+                : 'bg-white border border-gray-200 hover:border-primary-300 hover:shadow-lg'
+                }`}
             >
               {pkg.isPopular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-yellow-400 text-yellow-900 text-sm font-semibold rounded-full flex items-center gap-1">
@@ -62,7 +64,7 @@ export function PricingPackages() {
               </p>
 
               <ul className="space-y-3 mb-6">
-                {pkg.features.map((feature, index) => (
+                {pkg.features.map((feature: string, index: number) => (
                   <li key={index} className="flex items-start gap-2">
                     <Check className={`w-5 h-5 flex-shrink-0 ${pkg.isPopular ? 'text-primary-200' : 'text-primary-600'}`} />
                     <span className={`text-sm ${pkg.isPopular ? 'text-primary-100' : 'text-gray-600'}`}>
@@ -73,11 +75,10 @@ export function PricingPackages() {
               </ul>
 
               <button
-                className={`w-full py-3 rounded-lg font-semibold transition-all ${
-                  pkg.isPopular
-                    ? 'bg-white text-primary-600 hover:bg-gray-100'
-                    : 'bg-primary-600 text-white hover:bg-primary-700'
-                }`}
+                className={`w-full py-3 rounded-lg font-semibold transition-all ${pkg.isPopular
+                  ? 'bg-white text-primary-600 hover:bg-gray-100'
+                  : 'bg-primary-600 text-white hover:bg-primary-700'
+                  }`}
               >
                 Select Package
               </button>

@@ -1,4 +1,4 @@
-import { ShieldCheck, Eye, BadgeCheck, Clock } from 'lucide-react';
+import { ShieldCheck, Eye, BadgeCheck, Clock, Users } from 'lucide-react';
 import { benefits } from '../../data/benefits';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -6,20 +6,20 @@ const iconMap: Record<string, React.ElementType> = {
     'eye': Eye,
     'badge-check': BadgeCheck,
     'clock': Clock,
+    'users': Users,
 };
 
 export function WhyBuiltToLast() {
     return (
         <section className="py-20 bg-white">
             <div className="section-container">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="section-heading">Why Built To Last?</h2>
-                    <p className="section-subheading">
-                        We ensure peace of mind, trust, and transparent house construction services.
-                    </p>
+                <div className="text-center max-w-4xl mx-auto mb-16">
+                    <h2 className="section-heading text-3xl md:text-4xl">
+                        Inception of Built to last lies in five main challenges faced by today’s construction industry.
+                    </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
                     {benefits.map((benefit) => {
                         const Icon = iconMap[benefit.icon];
                         return (

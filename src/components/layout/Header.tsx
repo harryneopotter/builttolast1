@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { navigationLinks, ctaLink } from '../../data/navigation';
+import logo from '../../assets/logo.png';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,19 +17,13 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
+        }`}
     >
       <div className="section-container">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">B</span>
-            </div>
-            <span className="font-bold text-xl text-gray-900">
-              Built To Last
-            </span>
+            <img src={logo} alt="Built To Last Logo" className="h-10 md:h-12 w-auto object-contain" />
           </a>
 
           <nav className="hidden lg:flex items-center gap-8">

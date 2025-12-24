@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { ThemeSwitcher } from '../ui/ThemeSwitcher';
+import logo from '../../assets/logo.png';
 
 const siteMapLinks = [
   { label: 'How it Works', href: '#how-it-works' },
@@ -11,6 +12,7 @@ const siteMapLinks = [
 
 const otherLinks = [
   { label: 'Join as Professional', href: '#professional' },
+  { label: 'Channel Partner Program', href: '#partner' },
   { label: 'Channel Partner Program', href: '#partner' },
 ];
 
@@ -32,12 +34,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <span className="font-bold text-xl text-white">
-                Built To Last
-              </span>
+              <img src={logo} alt="Built To Last Logo" className="h-10 w-auto brightness-0 invert" />
             </a>
             <p className="text-gray-400 mb-6 leading-relaxed">
               India's No.1 Tech-Enabled Construction Company, providing high-quality home building services with transparent processes, real-time updates, and AI-driven technology.

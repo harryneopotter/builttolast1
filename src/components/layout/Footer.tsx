@@ -40,9 +40,9 @@ export function Footer() {
               India's No.1 Tech-Enabled Construction Company, providing high-quality home building services with transparent processes, real-time updates, and AI-driven technology.
             </p>
             <div className="space-y-3 mb-6">
-              <a href="tel:+910000000000" className="flex items-center gap-3 hover:text-primary-400 transition-colors">
+              <a href="tel:+919211462039" className="flex items-center gap-3 hover:text-primary-400 transition-colors">
                 <Phone className="w-5 h-5 text-primary-500" />
-                <span>+91 0000000000</span>
+                <span>+91 9211462039</span>
               </a>
               <a href="mailto:support@builttolast.com" className="flex items-center gap-3 hover:text-primary-400 transition-colors">
                 <Mail className="w-5 h-5 text-primary-500" />
@@ -118,7 +118,15 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            &copy; 2025 Pluckwalk Technologies Pvt. Ltd. All rights reserved.
+            Developed and Managed by{' '}
+            <a
+              href="https://bluepanda.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-400 hover:text-primary-300 transition-colors"
+            >
+              Bluepanda.in
+            </a>
           </p>
           <ThemeSwitcher />
         </div>

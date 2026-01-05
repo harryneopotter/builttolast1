@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 import { navigationLinks, ctaLink } from '../../data/navigation';
 import logo from '../../assets/logo.png';
 
-export function Header() {
+const PHONE_NUMBER = '9211462039';
+const WHATSAPP_LINK = `https://wa.me/91${PHONE_NUMBER}`;
+
+export function Header({ onOpenForm }: { onOpenForm?: () => void }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -14,6 +17,16 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleLetsBuild = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onOpenForm) {
+      onOpenForm();
+    } else {
+      // Scroll to form section as fallback
+      document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header
@@ -38,20 +51,30 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+917505205205"
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors"
+              aria-label="Chat on WhatsApp"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span className="font-medium text-sm">WhatsApp</span>
+            </a>
+            <a
+              href={`tel:+91${PHONE_NUMBER}`}
               className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="font-medium">+91-7505205205</span>
+              <span className="font-medium">+91-{PHONE_NUMBER}</span>
             </a>
-            <a
-              href={ctaLink.href}
+            <button
+              onClick={handleLetsBuild}
               className="btn-primary"
             >
               {ctaLink.label}
-            </a>
+            </button>
           </div>
 
           <button
@@ -77,18 +100,30 @@ export function Header() {
                 </a>
               ))}
               <a
-                href="tel:+917505205205"
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-green-600 hover:text-green-700 transition-colors py-2"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span className="font-medium">WhatsApp Us</span>
+              </a>
+              <a
+                href={`tel:+91${PHONE_NUMBER}`}
                 className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition-colors py-2"
               >
                 <Phone className="w-4 h-4" />
-                <span className="font-medium">+91-7505205205</span>
+                <span className="font-medium">+91-{PHONE_NUMBER}</span>
               </a>
-              <a
-                href={ctaLink.href}
+              <button
+                onClick={(e) => {
+                  setIsMobileMenuOpen(false);
+                  handleLetsBuild(e);
+                }}
                 className="btn-primary w-full text-center mt-2"
               >
                 {ctaLink.label}
-              </a>
+              </button>
             </nav>
           </div>
         )}

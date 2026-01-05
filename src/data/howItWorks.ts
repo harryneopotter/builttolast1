@@ -8,38 +8,39 @@ export interface Step {
 export const steps: Step[] = [
   {
     id: 1,
-    title: 'Raise a Request',
-    description: 'Contact via request or call. Team understands requirements and schedules meeting with technical expert.',
+    title: 'Share Your Requirements',
+    description: 'Fill out the form or call us. Our team understands your needs and schedules a site visit with our technical expert.',
     icon: 'file-text',
   },
   {
     id: 2,
     title: 'Meet Our Expert',
-    description: 'Experts help you choose the right package and address questions about construction options.',
+    description: 'Our experts visit your plot, understand your vision, and help you choose the right package for your dream home.',
     icon: 'users',
   },
   {
     id: 3,
-    title: 'Book with Us',
-    description: 'Pay just 10% of the estimated project cost to commence your journey.',
-    icon: 'credit-card',
-  },
-  {
-    id: 4,
-    title: 'Receive Detailed Plans',
-    description: 'Architects deliver exhaustive designs including floor plans, 3D elevations, structural/electrical/plumbing drawings.',
+    title: 'Design Your Home',
+    description: 'Our architects create personalized 2D floor plans, 3D elevations, and Vastu-compliant designs as per your requirements.',
     icon: 'layout',
   },
   {
+    id: 4,
+    title: 'Book & Start Construction',
+    description: 'Pay just 10% booking amount. Construction begins with detailed planning and all approvals in place.',
+    icon: 'credit-card',
+  },
+  {
     id: 5,
-    title: 'Track & Transact',
-    description: 'Secure ESCROW payments with regular site visits and progress monitoring via the Built To Last app.',
+    title: 'Track Progress Live',
+    description: 'Monitor your construction 24/7 through our app. Regular site updates, milestone tracking, and ESCROW payments.',
     icon: 'smartphone',
   },
   {
     id: 6,
-    title: 'Settle In',
-    description: 'Welcome to your dream home! Built To Last ensures smooth handover with 10-year structural warranty.',
+    title: 'Move Into Your Dream Home',
+    description: 'Quality inspected, fully finished home with a 10-year structural warranty. Welcome to your Built To Last home!',
     icon: 'home',
   },
 ];
+

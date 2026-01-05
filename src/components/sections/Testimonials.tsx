@@ -8,8 +8,8 @@ export function Testimonials() {
 
   const filteredTestimonials = testimonials.filter((t) => {
     if (activeFilter === 'all') return true;
-    if (activeFilter === 'basic') return t.package === 'Basic';
-    if (activeFilter === 'premium') return t.package === 'Premium' || t.package === 'Royale';
+    if (activeFilter === 'primary') return t.package === 'Primary';
+    if (activeFilter === 'premium') return t.package === 'Premium' || t.package === 'Platinum';
     if (activeFilter === 'sqft-1000') return t.sqft > 1000;
     return true;
   });
@@ -55,11 +55,10 @@ export function Testimonials() {
                 setActiveFilter(filter.id);
                 setCurrentIndex(0);
               }}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                activeFilter === filter.id
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeFilter === filter.id
+                ? 'bg-primary-600 text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
             >
               {filter.label}
             </button>
@@ -130,20 +129,12 @@ export function Testimonials() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentIndex ? 'w-8 bg-primary-600' : 'bg-gray-300'
-                }`}
+                className={`w-2 h-2 rounded-full transition-all ${index === currentIndex ? 'w-8 bg-primary-600' : 'bg-gray-300'
+                  }`}
               />
             ))}
           </div>
         </div>
-
-        <div className="text-center mt-8">
-          <a href="#" className="text-primary-600 font-semibold hover:underline">
-            View more reviews
-          </a>
-        </div>
-      </div>
     </section>
   );
 }

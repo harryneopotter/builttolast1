@@ -11,6 +11,10 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export function HowItWorks() {
+  const handleGetStarted = () => {
+    document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="how-it-works" className="py-20 bg-white">
       <div className="section-container">
@@ -39,9 +43,17 @@ export function HowItWorks() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed mb-4">
                       {step.description}
                     </p>
+                    {step.id === 1 && (
+                      <button
+                        onClick={handleGetStarted}
+                        className="px-6 py-2 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors text-sm"
+                      >
+                        Get Started
+                      </button>
+                    )}
                   </div>
                   {index < steps.length - 1 && (
                     <div className="hidden lg:block absolute top-10 left-full w-full h-0.5">
@@ -57,7 +69,18 @@ export function HowItWorks() {
             })}
           </div>
         </div>
+
+        {/* CTA at bottom */}
+        <div className="text-center mt-12">
+          <button
+            onClick={handleGetStarted}
+            className="btn-primary text-lg px-8 py-4"
+          >
+            Start Your Journey Now
+          </button>
+        </div>
       </div>
     </section>
   );
 }
+

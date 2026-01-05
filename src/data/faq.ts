@@ -53,6 +53,6 @@ export const faqs: FAQ[] = [
   {
     id: '10',
     question: 'How to get started?',
-    answer: 'Raise request online or call +91 7505 205 205 for guidance through consultation and planning.',
+    answer: 'Raise request online or call +91 9211 462 039 for guidance through consultation and planning.',
   },
 ];

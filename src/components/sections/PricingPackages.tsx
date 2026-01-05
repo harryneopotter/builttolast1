@@ -75,12 +75,20 @@ export function PricingPackages() {
               </ul>
 
               <button
+                onClick={() => {
+                  const formPopup = document.getElementById('form-popup');
+                  if (formPopup) {
+                    formPopup.classList.remove('hidden');
+                  } else {
+                    document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className={`w-full py-3 rounded-lg font-semibold transition-all ${pkg.isPopular
                   ? 'bg-white text-primary-600 hover:bg-gray-100'
                   : 'bg-primary-600 text-white hover:bg-primary-700'
                   }`}
               >
-                Select Package
+                Talk to Expert
               </button>
             </div>
           ))}

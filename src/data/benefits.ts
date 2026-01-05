@@ -1,3 +1,5 @@
+import { PricingPackage } from './pricing';
+
 export interface Benefit {
   id: string;
   title: string;

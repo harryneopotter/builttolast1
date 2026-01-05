@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Maximize2, ArrowRight } from 'lucide-react';
+import { MapPin, Maximize2 } from 'lucide-react';
 import { projects } from '../../data/projects';
 
 export function ProjectsGallery() {
@@ -25,11 +25,10 @@ export function ProjectsGallery() {
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`px-6 py-2 rounded-full font-medium transition-all ${
-                filter === f
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-100'
-              }`}
+              className={`px-6 py-2 rounded-full font-medium transition-all ${filter === f
+                ? 'bg-primary-600 text-white'
+                : 'bg-white text-gray-600 hover:bg-gray-100'
+                }`}
             >
               {f.charAt(0).toUpperCase() + f.slice(1)}
             </button>
@@ -73,16 +72,6 @@ export function ProjectsGallery() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 text-primary-600 font-semibold hover:gap-3 transition-all"
-          >
-            View 12 more projects
-            <ArrowRight className="w-5 h-5" />
-          </a>
         </div>
 
         {selectedProject && (

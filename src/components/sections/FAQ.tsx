@@ -24,11 +24,11 @@ export function FAQ() {
                   Can't find the answer you're looking for? Our team is here to help.
                 </p>
                 <a
-                  href="tel:+917505205205"
+                  href="tel:+919211462039"
                   className="inline-flex items-center gap-2 text-primary-600 font-semibold hover:underline"
                 >
                   <Phone className="w-4 h-4" />
-                  +91 7505 205 205
+                  +91 9211 462 039
                 </a>
               </div>
             </div>

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
@@ -10,12 +11,46 @@ import { Testimonials } from './components/sections/Testimonials';
 import { ProjectsGallery } from './components/sections/ProjectsGallery';
 import { HowItWorks } from './components/sections/HowItWorks';
 import { FAQ } from './components/sections/FAQ';
+import { ConsultationPopup } from './components/ui/ConsultationPopup';
 
 function App() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  // Show popup on page load if not submitted in last 24 hours
+  useEffect(() => {
+    const sessionSubmitted = sessionStorage.getItem('btl_form_submitted_session');
+    const lastSubmission = localStorage.getItem('btl_form_submitted');
+
+    if (sessionSubmitted) {
+      // Already submitted in this session
+      return;
+    }
+
+    if (lastSubmission) {
+      const submissionTime = parseInt(lastSubmission, 10);
+      const now = Date.now();
+      const twentyFourHours = 24 * 60 * 60 * 1000;
+      if (now - submissionTime < twentyFourHours) {
+        // Submitted within last 24 hours
+        return;
+      }
+    }
+
+    // Show popup after a short delay
+    const timer = setTimeout(() => {
+      setIsPopupOpen(true);
+    }, 3000); // 3 second delay for better UX
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const openPopup = () => setIsPopupOpen(true);
+  const closePopup = () => setIsPopupOpen(false);
+
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-white">
-        <Header />
+        <Header onOpenForm={openPopup} />
         <main>
           <Hero />
           <WhyBuiltToLast />
@@ -28,9 +63,11 @@ function App() {
           <AppTracking />
         </main>
         <Footer />
+        <ConsultationPopup isOpen={isPopupOpen} onClose={closePopup} />
       </div>
     </ThemeProvider>
   );
 }
 
 export default App;
+

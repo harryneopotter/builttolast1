@@ -2,6 +2,15 @@ import { ArrowRight } from 'lucide-react';
 import { AppointmentForm } from '../ui/AppointmentForm';
 
 export function Hero() {
+  const handleTalkToExpert = () => {
+    const popup = document.querySelector('[data-popup="consultation"]');
+    if (popup) {
+      (popup as HTMLElement).click();
+    } else {
+      document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       <div
@@ -29,13 +38,16 @@ export function Hero() {
                 Calculate Cost Instantly
                 <ArrowRight className="w-5 h-5" />
               </a>
-              <a href="#contact" className="btn-white text-lg px-8 py-4">
+              <button
+                onClick={handleTalkToExpert}
+                className="btn-white text-lg px-8 py-4"
+              >
                 Talk to Expert
-              </a>
+              </button>
             </div>
           </div>
 
-          <div className="lg:col-span-12 xl:col-span-5 flex justify-center lg:justify-end">
+          <div id="hero-form" className="lg:col-span-12 xl:col-span-5 flex justify-center lg:justify-end">
             <AppointmentForm />
           </div>
         </div>
@@ -45,3 +57,4 @@ export function Hero() {
     </section>
   );
 }
+

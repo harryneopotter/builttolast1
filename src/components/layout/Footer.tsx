@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
 import { ThemeSwitcher } from '../ui/ThemeSwitcher';
 import logo from '../../assets/logo.png';
 
@@ -30,14 +30,14 @@ export function Footer() {
               India's No.1 Tech-Enabled Construction Company, providing high-quality home building services with transparent processes.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61585858574224" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors" aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/builttolastworks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors" aria-label="YouTube">
-                <Youtube className="w-5 h-5" />
+              <a href="https://x.com/BuilttolastHQ" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors" aria-label="Twitter">
+                <Twitter className="w-5 h-5" />
               </a>
             </div>
           </div>

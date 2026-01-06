@@ -135,6 +135,7 @@ export function Testimonials() {
             ))}
           </div>
         </div>
+      </div>
     </section>
   );
 }

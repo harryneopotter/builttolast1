@@ -36,7 +36,7 @@ export function Header({ onOpenForm }: { onOpenForm?: () => void }) {
       <div className="section-container">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="#" className="flex items-center gap-2">
-            <img src={logo} alt="Built To Last Logo" className="h-10 md:h-12 w-auto object-contain" />
+            <img src={logo} alt="Built To Last Logo" className="h-16 md:h-20 w-auto object-contain" />
           </a>
 
           <nav className="hidden lg:flex items-center gap-8">

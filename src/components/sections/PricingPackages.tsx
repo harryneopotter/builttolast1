@@ -52,10 +52,11 @@ export function PricingPackages() {
                   {pkg.name}
                 </h3>
                 <div className={`text-3xl font-bold ${pkg.isPopular ? 'text-white' : 'text-primary-600'}`}>
-                  ₹{pkg.pricePerSqFt.toLocaleString('en-IN')}
-                  <span className={`text-base font-normal ${pkg.isPopular ? 'text-primary-100' : 'text-gray-500'}`}>
-                    /sqft
-                  </span>
+                  {pkg.pricePerSqFt > 0 ? (
+                    <>₹{pkg.pricePerSqFt.toLocaleString('en-IN')}<span className={`text-base font-normal ${pkg.isPopular ? 'text-primary-100' : 'text-gray-500'}`}>/sqft</span></>
+                  ) : (
+                    <span className="text-lg font-semibold text-primary-600">Contact for pricing</span>
+                  )}
                 </div>
               </div>
 

@@ -77,6 +77,18 @@ export function Header({ onOpenForm }: { onOpenForm?: () => void }) {
             </button>
           </div>
 
+          {/* Mobile WhatsApp Phone Link */}
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="lg:hidden flex items-center gap-2 text-green-600 hover:text-green-700 font-bold transition-colors"
+            aria-label="WhatsApp"
+          >
+            <MessageCircle className="w-6 h-6" />
+            <span className="text-lg md:text-xl">+91-{PHONE_NUMBER}</span>
+          </a>
+
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 text-gray-700"

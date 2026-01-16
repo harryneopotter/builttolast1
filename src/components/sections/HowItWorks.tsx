@@ -1,18 +1,26 @@
-import { FileText, Users, CreditCard, Layout, Smartphone, Home } from 'lucide-react';
+import { FileText, Users, CreditCard, Layout, Smartphone, Home, CheckCircle, FileCheck, Glasses, Key } from 'lucide-react';
 import { steps } from '../../data/howItWorks';
 
 const iconMap: Record<string, React.ElementType> = {
   'file-text': FileText,
   'users': Users,
   'credit-card': CreditCard,
+  'check-circle': CheckCircle,
   'layout': Layout,
-  'smartphone': Smartphone,
+  'file-check': FileCheck,
   'home': Home,
+  'glasses': Glasses,
+  'key': Key,
 };
 
 export function HowItWorks() {
   const handleGetStarted = () => {
-    document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' });
+    const formPopup = document.getElementById('form-popup');
+    if (formPopup) {
+      formPopup.classList.remove('hidden');
+    } else {
+      document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -21,14 +29,14 @@ export function HowItWorks() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="section-heading">How it works</h2>
           <p className="section-subheading">
-            A simple 6-step process to build your dream home with Built To Last
+            A simple 8-step process to build your dream home with Built To Last
           </p>
         </div>
 
         <div className="relative">
           <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-primary-100" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {steps.map((step, index) => {
               const Icon = iconMap[step.icon];
               return (

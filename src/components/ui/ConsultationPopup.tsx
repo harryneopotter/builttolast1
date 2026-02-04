@@ -159,11 +159,10 @@ export function ConsultationPopup({ isOpen, onClose }: ConsultationPopupProps) {
                             <div>
                                 <input
                                     type="email"
-                                    placeholder="Email ID *"
+                                    placeholder="Email ID (optional)"
                                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all"
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    required
                                 />
                             </div>
 

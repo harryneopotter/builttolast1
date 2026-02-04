@@ -138,8 +138,7 @@ export function CostEstimator() {
                     />
                     <input
                       type="email"
-                      placeholder="Email Address"
-                      required
+                      placeholder="Email Address (optional)"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 transition-colors"
                       value={userData.email}
                       onChange={(e) => setUserData({ ...userData, email: e.target.value })}
@@ -149,10 +148,10 @@ export function CostEstimator() {
 
                 <button
                   onClick={() => {
-                    if (userData.name && userData.phone && userData.email) {
+                    if (userData.name && userData.phone) {
                       setShowResults(true);
                     } else {
-                      alert('Please provide your contact details first.');
+                      alert('Please provide your name and phone number.');
                     }
                   }}
                   className="w-full btn-primary py-4 text-lg gap-2 mt-4"

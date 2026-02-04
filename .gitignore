@@ -26,7 +26,7 @@ Thumbs.db
 
 # IDEs and editors
 .vscode/
-!.vscode/extensions.json
+.vscode/extensions.json
 .idea/
 *.suo
 *.ntvs*
@@ -55,3 +55,6 @@ coverage
 feedback_images/
 inspector.html
 workwithus.txt
+Constrcution Items Brands With Logo.docx
+update/
+docs/

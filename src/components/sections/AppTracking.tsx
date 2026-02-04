@@ -1,4 +1,4 @@
-import { Smartphone, Layout, Box, Clock } from 'lucide-react';
+import { Layout, Box, Clock, Monitor } from 'lucide-react';
 
 const features = [
   {
@@ -32,7 +32,7 @@ export function AppTracking() {
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary-600 rounded-2xl flex items-center justify-center shadow-lg">
-                  <Smartphone className="w-10 h-10 text-white" />
+                  <Monitor className="w-10 h-10 text-white" />
                 </div>
               </div>
             </div>
@@ -40,13 +40,13 @@ export function AppTracking() {
 
           <div className="order-1 lg:order-2">
             <h2 className="section-heading text-left mb-4">
-              We construct your dream home. You track progress on app.
+              We construct your dream home. We track progress online.
             </h2>
             <p className="section-subheading text-left mb-8">
-              Stay connected with your project at every step. Our mobile app gives you complete visibility into the construction process.
+              Stay connected with your project at every step. Our online tracking system gives you complete visibility into the construction process.
             </p>
 
-            <div className="space-y-6 mb-8">
+            <div className="space-y-6">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -57,23 +57,6 @@ export function AppTracking() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-              <a href="#" className="inline-block">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                  alt="Get it on Google Play"
-                  className="h-12"
-                />
-              </a>
-              <a href="#" className="inline-block">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
-                  alt="Download on App Store"
-                  className="h-12"
-                />
-              </a>
             </div>
           </div>
         </div>
